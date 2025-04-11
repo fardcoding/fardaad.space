@@ -1,13 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1> Hello This is just the demo</h1>
-    <h2> More coming soon</h2>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Toggle Theme -->
+  <div class="theme-toggle">
+    <button id="toggle-theme">🌙</button>
+  </div>
+
+  <header>
+    <nav>
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-text">
+      <h2>Hi, I'm [Your Name]</h2>
+      <p>Software Developer | Web Enthusiast | Tech Explorer</p>
+    </div>
+    <img src="your-cool-gif.gif" alt="Coding GIF" class="hero-gif" />
+  </section>
+
+  <section id="about" class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m a passionate developer with experience in creating dynamic and responsive web apps.</p>
+    <img src="about-me.gif" alt="About GIF" />
+  </section>
+
+  <section id="services" class="services" data-aos="fade-up">
+    <h2>What I Do</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Building modern, fast, and scalable websites.</p>
+      </div>
+      <div class="card">
+        <h3>App Development</h3>
+        <p>Creating seamless mobile experiences.</p>
+      </div>
+      <div class="card">
+        <h3>Consulting</h3>
+        <p>Helping startups find the best tech solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" data-aos="fade-up">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project">
+        <img src="project1.gif" alt="Project 1" />
+        <h3>Project One</h3>
+        <p>A full-stack e-commerce site.</p>
+      </div>
+      <div class="project">
+        <img src="project2.gif" alt="Project 2" />
+        <h3>Project Two</h3>
+        <p>A real-time chat app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Loader
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+
+    // Theme Toggle
+    const toggle = document.getElementById('toggle-theme');
+    const body = document.body;
+    const theme = localStorage.getItem('theme');
+
+    if (theme === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌙';
+      }
+    });
+  </script>
 </body>
 </html>
