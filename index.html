@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Fardaad | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
-  <!-- Loader -->
   <div class="loader" id="loader">
     <div class="spinner"></div>
   </div>
 
-  <!-- Toggle Theme -->
   <div class="theme-toggle">
     <button id="toggle-theme">🌙</button>
   </div>
 
   <header>
     <nav>
-      <h1 class="logo">MyPortfolio</h1>
+      <h1 class="logo">Fardaad</h1>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -34,16 +32,17 @@
 
   <section class="hero" data-aos="fade-up">
     <div class="hero-text">
-      <h2>Hi, I'm Fardaad</h2>
-      <p>Software Developer | Web Enthusiast | Tech Explorer</p>
+      <h2>Hello, I'm Fardaad</h2>
+      <p>Software Engineer • Web Developer • Innovator</p>
+      <a href="#projects" class="btn-primary">See My Work</a>
     </div>
-    <img src="your-cool-gif.gif" alt="Coding GIF" class="hero-gif" />
+    <img src="assets/hero.gif" alt="Coding GIF" class="hero-gif" />
   </section>
 
   <section id="about" class="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>I’m a passionate developer with experience in creating dynamic and responsive web apps.</p>
-    <img src="about-me.gif" alt="About GIF" />
+    <p>I’m a passionate developer with experience in creating dynamic and responsive web apps. Currently pursuing Software Engineering, with a focus on AI and data engineering.</p>
+    <img src="assets/about.gif" alt="About GIF" />
   </section>
 
   <section id="services" class="services" data-aos="fade-up">
@@ -68,14 +67,14 @@
     <h2>My Projects</h2>
     <div class="project-grid">
       <div class="project">
-        <img src="project1.gif" alt="Project 1" />
-        <h3>Project One</h3>
-        <p>A full-stack e-commerce site.</p>
+        <img src="assets/project1.gif" alt="Project 1" />
+        <h3>E-commerce Platform</h3>
+        <p>Full-stack site using React, Node.js & MongoDB.</p>
       </div>
       <div class="project">
-        <img src="project2.gif" alt="Project 2" />
-        <h3>Project Two</h3>
-        <p>A real-time chat app.</p>
+        <img src="assets/project2.gif" alt="Project 2" />
+        <h3>Real-time Chat App</h3>
+        <p>Live chat using Socket.io, Express, and MongoDB.</p>
       </div>
     </div>
   </section>
@@ -91,39 +90,10 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <p>&copy; 2025 Fardaad. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Loader
-    window.addEventListener('load', () => {
-      document.getElementById('loader').style.display = 'none';
-    });
-
-    // Theme Toggle
-    const toggle = document.getElementById('toggle-theme');
-    const body = document.body;
-    const theme = localStorage.getItem('theme');
-
-    if (theme === 'dark') {
-      body.classList.add('dark');
-      toggle.textContent = '☀️';
-    }
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      if (body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        toggle.textContent = '☀️';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggle.textContent = '🌙';
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
