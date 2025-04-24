@@ -93,7 +93,21 @@
     <p>&copy; 2025 Fardaad. All rights reserved.</p>
   </footer>
 
+  <!-- 3D Solar System Canvas -->
+  <canvas id="solarCanvas"></canvas>
+
+  <!-- Planet Labels -->
+  <div class="planet-label" id="label-earth" onclick="navigateTo('about')">🌍 About</div>
+  <div class="planet-label" id="label-mars" onclick="navigateTo('services')">🚀 Services</div>
+  <div class="planet-label" id="label-saturn" onclick="navigateTo('projects')">🪐 Projects</div>
+  <div class="planet-label" id="label-moon" onclick="navigateTo('contact')">🌕 Contact</div>
+
+  <!-- External JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Your Scripts -->
   <script src="script.js"></script>
+  <script src="solar.js"></script>
 </body>
 </html>
